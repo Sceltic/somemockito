@@ -2,6 +2,7 @@ package com.math.operations;
 
 
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,9 +29,12 @@ public class MathApplicationTester {
     @Test
     public void testAdd(){
         //add the behavior of calc service to add two numbers
-        when(calcService.add(10.0,20.0)).thenReturn(30.00);
+        when(calcService.add(20.0,20.0)).thenReturn(30.00);
 
         //test the add functionality
-        Assert.assertEquals(mathApplication.add(10.0, 20.0),30.0,0);
+        Assert.assertEquals(mathApplication.add(10.0, 20.0),0.0,0);
+        //verify the behavior
+
+        //verify(calcService).add(20.0, 20.0);
     }
 }
